@@ -18,13 +18,15 @@ addons:
   firefox: "23.0"
 
 services:
-  - selenium
+#  - selenium
+
+before_install:
+#  - composer self-update
+  - composer install
+
 
 before_script:
-  - which php
-  - composer self-update
-  - composer install
   - echo 'America/Kentucky/Louisville' | sudo tee /etc/timezone
   - sudo dpkg-reconfigure --frontend noninteractive tzdata
-  - "export DISPLAY=:99.0"
-  - "/etc/init.d/xvfb start"
+#  - "export DISPLAY=:99.0"
+#  - "/etc/init.d/xvfb start"
