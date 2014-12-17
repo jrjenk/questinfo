@@ -1,0 +1,28 @@
+# Build Image
+build_image: shippableimages/ubuntu1204_php
+
+# language setting
+language: php
+
+# php tag
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - 5.6
+
+#Setup Tasks
+
+env:
+  - UPGRADE=none
+  - UPGARDE=1.0
+
+addons:
+  firefox: "23.0"
+
+services:
+  - selenium
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "/etc/init.d/xvfb start"
