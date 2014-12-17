@@ -22,7 +22,7 @@ services:
 
 before_install:
 #  - composer self-update
-  - composer install
+  - composer update
 
 
 before_script:
