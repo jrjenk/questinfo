@@ -8,14 +8,10 @@ language: php
 php:
   - 5.3
   - 5.4
-  - 5.5
-  - 5.6
 
 #Setup Tasks
 
 env:
-  - UPGRADE=none
-  - UPGARDE=1.0
 
 addons:
   firefox: "23.0"
@@ -24,5 +20,9 @@ services:
   - selenium
 
 before_script:
+  - composer self-update
+  - composer install
+  - echo 'America/Kentucky/Louisville' | sudo tee /etc/timezone
+  - sudo dpkg-reconfigure --frontend noninteractive tzdata
   - "export DISPLAY=:99.0"
   - "/etc/init.d/xvfb start"
