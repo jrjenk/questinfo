@@ -6,8 +6,9 @@ language: php
 
 # php tag
 php:
-  - 5.3
-  - 5.4
+#  - 5.3
+#  - 5.4
+  - 5.5
 
 #Setup Tasks
 
@@ -20,6 +21,7 @@ services:
   - selenium
 
 before_script:
+  - which php
   - composer self-update
   - composer install
   - echo 'America/Kentucky/Louisville' | sudo tee /etc/timezone
