@@ -25,3 +25,4 @@ class SQLTest extends PHPUnit_Framework_TestCase {
     $this->assertNotEquals($doc, false);
   }
 }
+?>
