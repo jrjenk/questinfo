@@ -7,7 +7,7 @@ before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - composer self-update # Bring composer up to latest version.
-  - composer install # Since we are deploying in production
+  - composer install --prefer-source --no-interaction
   - mysql -e 'create database if not exists test;'
   
 script:
