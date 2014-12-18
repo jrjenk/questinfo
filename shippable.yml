@@ -1,35 +1,9 @@
-# Build Image
-build_image: shippableimages/ubuntu1204_php
-
-# language setting
 language: php
 
-# php tag
 php:
-#  - 5.3
-#  - 5.4
-  - 5.5
-
-#Setup Tasks
-
-env:
-
-addons:
-  firefox: "23.0"
-
-services:
-#  - selenium
-
-before_install:
-#  - composer self-update
-#  - "composer update"
-
+  - 5.4
 
 before_script:
-#  - "echo 'America/Kentucky/Louisville' | sudo tee /etc/timezone"
-#  - "sudo dpkg-reconfigure --frontend noninteractive tzdata"
-#  - "export DISPLAY=:99.0"
-#  - "/etc/init.d/xvfb start"
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - mysql -e 'create database if not exists test;'
