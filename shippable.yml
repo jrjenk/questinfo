@@ -13,6 +13,7 @@ before_script:
   - composer self-update # Bring composer up to latest version.
   - composer install --prefer-source --no-interaction
   - mysql -e 'create database if not exists test;'
-  
+
 script:
-  - phpunit --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage test.php
+  - phpunit --log-junit shippable/testresults/test.xml --coverage-xml shippable/codecoverage test.php
+  - phpunit --log-junit shippable/testresults/test.xml --coverage-xml shippable/codecoverage -c app/
