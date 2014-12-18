@@ -6,6 +6,7 @@ php:
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
+  - composer self-update # Bring composer up to latest version.
   - composer update
   - mysql -e 'create database if not exists test;'
   
