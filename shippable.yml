@@ -3,6 +3,10 @@ language: php
 php:
   - 5.4
 
+env:
+  global:
+    - CLEARDB_DATABASE_URL=mysql://shippable@127.0.0.1:3306/test?reconnect=true
+
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
